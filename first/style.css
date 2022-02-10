@@ -1,0 +1,15 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+table {
+background: linear-gradient(45deg, #EECFBA, #C5DDE8);
+width: 300px;
+border: 5px solid #C5DDE8;
+font-weight: bold;
+}
+
+button {
+    width: 100px;
+}
+
