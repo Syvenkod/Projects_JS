@@ -13,15 +13,20 @@ function createTable(json){
     const icon = json.weather[0]['icon'];
     img = document.createElement("img");
     let image= `<img src="http://openweathermap.org/img/wn/${icon}@2x.png">`;
-    table.appendChild(createRow(json.name, json.weather[0].main, json.main.temp, image))
+    let temp = Math.round(json.main.temp) + " &#176";
+    let windSpeed = "Wind: " + Math.round(json.wind.speed) + "m/s";
+    table.appendChild(createRow(json.name, json.weather[0].main, temp, image, windSpeed))
 }
 
-function createRow(name, main, temp, image) {
+function createRow(name, main, temp, image, windSpeed) {
     let tr = document.createElement("tr");
     tr.insertAdjacentHTML("beforeend", `<td>${name}</td>`);
     tr.insertAdjacentHTML("beforeend", `<td>${main + "<br>" + temp}</td>`);
     tr.insertAdjacentHTML("beforeend", `<td>${image}</td>`);
+    tr.insertAdjacentHTML("beforeend", `<td>${windSpeed}</td>`);
     return tr;
-};
+}
 
 
+// let tempC = Math.round(Number(json.main.temp)-273,0) + " &#176"+"C";
+// let tempF = Math.round(Number((json.main.temp)-273,0)*1.8 + 32) + " &#176"+"F";

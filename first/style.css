@@ -1,15 +1,25 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 25%;
 
 }
 table {
 background: linear-gradient(45deg, #EECFBA, #C5DDE8);
-width: 300px;
+width: 100%;
 border: 5px solid #C5DDE8;
 font-weight: bold;
+text-align: center;
+}
+
+#head-container{
+width: 100%;
+box-sizing: border-box;
+border: 5px solid #C5DDE8;
+background: linear-gradient(45deg, #EECFBA, #C5DDE8);
+display: flex;
+justify-content: space-between;
 }
 
 button {
-    width: 100px;
-}
+    width: 50px;}
 
