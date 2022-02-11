@@ -26,7 +26,3 @@ function createRow(name, main, temp, image, windSpeed) {
     tr.insertAdjacentHTML("beforeend", `<td>${windSpeed}</td>`);
     return tr;
 }
-
-
-// let tempC = Math.round(Number(json.main.temp)-273,0) + " &#176"+"C";
-// let tempF = Math.round(Number((json.main.temp)-273,0)*1.8 + 32) + " &#176"+"F";
