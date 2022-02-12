@@ -1,19 +1,9 @@
-btnTempC.addEventListener("click", function(){
-    table.innerHTML ="";
-    gradus = "&units=metric";
-    let cityArray = [];
-    cities.forEach(cityId => {
-    cityArray.push(new TodayCityWeather(`http://api.openweathermap.org/data/2.5/weather?id=${cityId}&appid=bf35cac91880cb98375230fb443a116f${gradus}`))
-    })
-    cityArray.forEach(city => city.todayInfo);
-    })
+let btnTempC = document.querySelector("#btn-tempC");
+let btnTempF = document.querySelector("#btn-tempF");
+let btnToday = document.querySelector("#today-btn");
+let btnForecast = document.querySelector("#forecast-btn");
 
-    btnTempF.addEventListener("click",function(){
-    table.innerHTML = "";
-    gradus = "&units=imperial";
-    let cityArray = [];
-    cities.forEach(cityId => {
-     cityArray.push(new TodayCityWeather(`http://api.openweathermap.org/data/2.5/weather?id=${cityId}&appid=bf35cac91880cb98375230fb443a116f${gradus}`))
-    })
-    cityArray.forEach(city => city.todayInfo);
-    });
+btnTempC.addEventListener("click", showWeather);
+btnToday.addEventListener("click", showWeather);
+btnForecast.addEventListener("click", showForecast);
+btnTempF.addEventListener("click", changeDegree);

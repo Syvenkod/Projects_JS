@@ -8,17 +8,21 @@
     <link href="style.css" rel="stylesheet" />
 </head>
 <body>
-   <div id="city-weather">
+   <div id="weather">
+       <div id="header"><p>Weather</p></div>
      <div id="head-container">
-         <button id="btn-tempC">&#176 C</button>
-          Weather
-         <button id="btn-tempF">&#176 F</button>
+         <div><button id="btn-tempC">&#176 C</button>
+         <button id="btn-tempF">&#176 F</button></div>
+         <div>
+            <button id="today-btn">Today</button>
+            <button id="forecast-btn">Forecast 5</button></div>
+         </div>
         </div>
-   <table id="table">
-
-   </table>
+   <table id="table"></table>
+   <table id="forecast"></table>
    </div>
 <script src="today.js"></script>
+<script src="forecast.js"></script>
 <script src="main.js"></script>
 <script src="buttons.js"></script>
 

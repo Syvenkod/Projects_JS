@@ -1,6 +1,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    width: 25%;
+    width: 70%;
+    margin: auto;
 
 }
 table {
@@ -9,6 +10,16 @@ width: 100%;
 border: 5px solid #C5DDE8;
 font-weight: bold;
 text-align: center;
+}
+
+#forecast {
+   width: 100%;
+   font-size: small;
+   text-align: center;
+}
+
+#forecast > tr{
+    font-size: large;
 }
 
 #head-container{
@@ -20,6 +31,16 @@ display: flex;
 justify-content: space-between;
 }
 
-button {
+#header{
+    width: 100%;
+    font-weight: bold;
+    box-sizing: border-box;
+    border: 5px solid #C5DDE8;
+    background: linear-gradient(45deg, #EECFBA, #C5DDE8);
+    display: flex;
+    justify-content: center;
+}
+
+#btn-tempC, #btn-tempF{
     width: 50px;}
 
