@@ -1,33 +1,80 @@
-class questions{
-    constructor (text, correctAnswer, answerOptions){
-        this.text = text;
-        this.correctAnswer = correctAnswer;
-        this.answerOptions = answerOptions;
+class Test{
+    element;
+
+    constructor(questions, results)
+    {this.questions = questions;
+    this.results = results;
+    this.score = 0;
+    this.question = 0;}
+
+    #drawQuestion(questions){
+        questions.forEach(question => {
+            question.createIn(this.questions)
+           });
     }
-
-    drawAll(){}
-
-    createIn(question){
-        this.text = document.createElement("div");
-        this.div.classList.add("question");
-
-        let p = document.createElement("p");
-        p.innerText = this.text;
-
-        let input = document.createElement("input");
-        input.addEventListener("click", this.changeState.bind(this));
-        input.type = "checkbox";
-
-        let p = document.createElement("p");
-        p.innerText = this.task.text;
-
-        this.div.append(input);
-        this.div.append(p);
-
-        question.append(this.text);
+    drawAll(){
+    questions.forEach(question => {
+        question.createIn(this.questions)
+           })
+     this.#drawQuestion(questions);
     }
-    changeState(question) {
-        this.task.isDone = !this.task.isDone;
-        this.div.classList.toggle("choice");
-    }
-    }
+}
+
+class Question{
+
+   constructor(text, answers)
+   {this.text = text;
+    this.answers = answers;}
+
+
+   createIn(element) {
+    this.div = document.createElement("div");
+    this.div.classList.add("question");
+
+    let pHead = document.createElement("p");
+    pHead.classList.add("p-head");
+    pHead.innerText = this.text;
+    this.div.append(pHead);
+
+    for (let i=0; i< this.answers.length; i++){
+    let divAnswers = document.createElement("div");
+    divAnswers.classList.add("answers");
+    let input = document.createElement("input");
+    input.addEventListener("click", this.changeState.bind(this));
+    input.type = "checkbox";
+    let p = document.createElement("p");
+    p.innerText = this.answers[i].text;
+    divAnswers.append(input);
+    divAnswers.append(p);
+    this.div.append(divAnswers)}
+
+    element.append(this.div);
+}
+   changeState(element){
+   }
+}
+
+class Answer{
+   constructor(text, value)
+   {this.text = text;
+    this.value = value;}
+}
+class Result{
+    constructor(text, value)
+   {this.text = text;
+    this.value = value;}
+
+   Check(value)
+   {
+       if(this.value <= value)
+       {return true;}
+       else
+       {return false;}
+   }
+}
+let questionList = document.querySelector(".questions-list");
+let test = new Test(questionList);
+
+window.addEventListener("load", function () {
+    test.drawAll();
+});
