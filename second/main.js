@@ -22,9 +22,10 @@ class Test{
 
 class Question{
 
-   constructor(text, answers)
+   constructor(text, answers, id)
    {this.text = text;
-    this.answers = answers;}
+    this.answers = answers;
+    this.id = id}
 
 
    createIn(element) {
@@ -40,8 +41,9 @@ class Question{
     let divAnswers = document.createElement("div");
     divAnswers.classList.add("answers");
     let input = document.createElement("input");
-    input.addEventListener("click", this.changeState.bind(this));
-    input.type = "checkbox";
+    input.type = "radio";
+    input.name = `answers ${this.id}`;
+    input.addEventListener("click", function(){divAnswers.classList.add('choice')});
     let p = document.createElement("p");
     p.innerText = this.answers[i].text;
     divAnswers.append(input);
@@ -50,8 +52,9 @@ class Question{
 
     element.append(this.div);
 }
-   changeState(element){
-   }
+//    changeState(divAnswers){
+//        divAnswers.classList.add('choice');
+//    }
 }
 
 class Answer{
@@ -73,6 +76,8 @@ class Result{
    }
 }
 let questionList = document.querySelector(".questions-list");
+let resultBtn = document.querySelector("#result");
+// resultBtn.addEventListener("click",);
 let test = new Test(questionList);
 
 window.addEventListener("load", function () {
