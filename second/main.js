@@ -1,10 +1,8 @@
 class Test{
     element;
 
-    constructor(questions, results)
+    constructor(questions)
     {this.questions = questions;
-    this.results = results;
-    this.score = 0;
     this.question = 0;}
 
     #drawQuestion(questions){
@@ -42,19 +40,15 @@ class Question{
     divAnswers.classList.add("answers");
     let input = document.createElement("input");
     input.type = "radio";
-    input.name = `answers ${this.id}`;
-    input.addEventListener("click", function(){divAnswers.classList.add('choice')});
+    input.name = `answer-${this.id}`;
     let p = document.createElement("p");
     p.innerText = this.answers[i].text;
     divAnswers.append(input);
     divAnswers.append(p);
     this.div.append(divAnswers)}
-
     element.append(this.div);
 }
-//    changeState(divAnswers){
-//        divAnswers.classList.add('choice');
-//    }
+
 }
 
 class Answer{
@@ -62,22 +56,20 @@ class Answer{
    {this.text = text;
     this.value = value;}
 }
-class Result{
-    constructor(text, value)
-   {this.text = text;
-    this.value = value;}
 
-   Check(value)
-   {
-       if(this.value <= value)
-       {return true;}
-       else
-       {return false;}
-   }
-}
+function check (){
+    let anw = document.querySelectorAll("input[name='answer-1']");
+    for (var i=0;i<anw.length; i++) {
+        if (anw[i].checked) {
+          alert('Выбран '+i+' radiobutton');
+        }
+        console.log(anw);
+};
+};
+
+
 let questionList = document.querySelector(".questions-list");
-let resultBtn = document.querySelector("#result");
-// resultBtn.addEventListener("click",);
+document.querySelector("#result").addEventListener("click",check);
 let test = new Test(questionList);
 
 window.addEventListener("load", function () {

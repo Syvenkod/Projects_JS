@@ -86,3 +86,4 @@ new Answer ("О чем Вы?", 0)], "10"),
 
 ]
 console.log(questions);
+
