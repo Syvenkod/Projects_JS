@@ -10,35 +10,57 @@ get forecastInfo(){
 }
 }
 function createTableForecast(json){
-    let dateArray = [json.list[5], json.list[13], json.list[21], json.list[29], json.list[37]];
+    let dateArray = [];
+    let hoursArray = [];
+    json.list.forEach(json => {
+        dateArray.push(json)});
+    for (let h=0; h < dateArray.length; h++){
+    let hour = new Date(Number(dateArray[h].dt+"000")).getUTCHours();
+    if (hour == 15){
+    hoursArray.push(dateArray[h])};
+    }
+
     tableForecast.appendChild(createRowCity(json.city.name))
-    for (let i=0; i < dateArray.length; i++){
-        const icon = dateArray[i].weather[0]['icon'];
+    let tr = document.createElement("tr");
+    for (let i=0; i < hoursArray.length; i++){
+        const icon = hoursArray[i].weather[0]['icon'];
         img = document.createElement("img");
         let image = `<img src="http://openweathermap.org/img/wn/${icon}@2x.png">`;
-        let date = new Date(Number(dateArray[i].dt+"000"));
+        let date = new Date(Number(hoursArray[i].dt+"000"));
         let dayDate = days[date.getDay()];
-        let temp = Math.round(dateArray[i].main.temp) + " &#176";
-    tableForecast.appendChild(createRowForecast(dayDate, dateArray[i].weather[0].main, temp, image,))
+        let temp = Math.round(hoursArray[i].main.temp) + " &#176";
+        tr.appendChild(createRowForecast(dayDate, dateArray[i].weather[0].main, temp, image,))
     }
+    tableForecast.appendChild(tr);
 }
 function createRowForecast(date, main, temp, image) {
-    let td = document.createElement("td");
+    let td = document.createElement("td")
     td.insertAdjacentHTML("beforeend", `<td>${date}<br>${main + "<br>" + temp}<br>${image}</td>`);
     return td;
 }
 
 function createRowCity(name){
     let tr = document.createElement("tr");
-    tr.insertAdjacentHTML("beforeend", `<td>${name}</td>`);
+    tr.insertAdjacentHTML("beforeend", `<tr>${name}</tr>`);
+    tr.classList.add("tr-head");
     return tr;
 }
 
 function showForecast(){
     table.innerHTML = tableForecast.innerHTML = "";
     degree = "&units=metric";
+    btnTempF.style.display = "none";
+    btnTempFForecast.style.display = "block";
+    btnTempC.style.display = "none";
+    btnTempCForecast.style.display = "block";
     showJsonForecast();
 }
+
+function changeDegreeForecast(){
+    table.innerHTML = tableForecast.innerHTML = "";
+    degree = "&units=imperial";
+    showJsonForecast();    }
+
 
 function showJsonForecast(){
     let cityArray = [];

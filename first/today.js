@@ -30,18 +30,16 @@ function createRow(name, main, temp, image, windSpeed) {
 function showWeather(){
     table.innerHTML = tableForecast.innerHTML = "";
     degree = "&units=metric";
-    let cityArray = [];
-    cities.forEach(cityId => {
-    cityArray.push(new TodayCityWeather(`http://api.openweathermap.org/data/2.5/weather?id=${cityId}&appid=bf35cac91880cb98375230fb443a116f${degree}`))
-    })
-    cityArray.forEach(city => city.todayInfo);
-    };
+    btnTempF.style.display = "block";
+    btnTempFForecast.style.display = "none";
+    btnTempCForecast.style.display = "none";
+    showJsonToday();
+}
 
 function changeDegree(){
         table.innerHTML = tableForecast.innerHTML = "";
         degree = "&units=imperial";
-        showJsonToday();
-        showJsonForecast();}
+        showJsonToday();    }
 
 function showJsonToday(){
     let cityArray = [];
@@ -49,4 +47,5 @@ function showJsonToday(){
      cityArray.push(new TodayCityWeather(`http://api.openweathermap.org/data/2.5/weather?id=${cityId}&appid=bf35cac91880cb98375230fb443a116f${degree}`))
     })
     cityArray.forEach(city => city.todayInfo);
+
 }

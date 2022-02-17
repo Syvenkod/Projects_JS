@@ -1,6 +1,6 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    width: 70%;
+    width: 600px;
     margin: auto;
 
 }
@@ -15,11 +15,14 @@ text-align: center;
 #forecast {
    width: 100%;
    font-size: small;
-   text-align: center;
+   display: flex;
+   flex-flow: column wrap;
+   align-content: center;
 }
 
-#forecast > tr{
+.tr-head{
     font-size: large;
+    margin-bottom: 20px;
 }
 
 #head-container{
@@ -28,6 +31,7 @@ box-sizing: border-box;
 border: 5px solid #C5DDE8;
 background: linear-gradient(45deg, #EECFBA, #C5DDE8);
 display: flex;
+flex-flow: row nowrap;
 justify-content: space-between;
 }
 
@@ -41,6 +45,6 @@ justify-content: space-between;
     justify-content: center;
 }
 
-#btn-tempC, #btn-tempF{
-    width: 50px;}
+#btn-tempC, #btn-tempF, #btn-tempF-forecast {
+    width: 40px;}
 
