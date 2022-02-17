@@ -45,6 +45,13 @@ justify-content: space-between;
     justify-content: center;
 }
 
-#btn-tempC, #btn-tempF, #btn-tempF-forecast {
-    width: 40px;}
+#btn-temp{
+    width: 20%;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+#btn-tempC, #btn-tempF, #btn-tempF-forecast, #btn-tempC-forecast {
+    width: 40px;
+    margin-right: 5px;}
 

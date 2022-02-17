@@ -30,6 +30,7 @@ function createRow(name, main, temp, image, windSpeed) {
 function showWeather(){
     table.innerHTML = tableForecast.innerHTML = "";
     degree = "&units=metric";
+    btnTempC.style.display = "block";
     btnTempF.style.display = "block";
     btnTempFForecast.style.display = "none";
     btnTempCForecast.style.display = "none";
