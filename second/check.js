@@ -21,7 +21,7 @@ let answersArray = answer0.concat(answer1, answer2, answer3, answer4, answer5, a
 let result = (counter/10)*100;
 let confirmed = confirm(`Вы выполнили на ${result}% из 100%
 Хотите повторить тест?`);
-if(confirmed){window.open("test.html")}
+if(confirmed){location.reload(true)}
 else {alert("Спасибо за выполнение теста")}
 }
 
