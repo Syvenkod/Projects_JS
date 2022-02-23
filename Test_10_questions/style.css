@@ -1,0 +1,48 @@
+body {
+    width: 1024px;
+    margin: auto;
+}
+
+header {
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px;
+}
+
+.questions-list{
+    width: 100%;
+    font-size: large;
+    background: linear-gradient(45deg, #EECFBA, #C5DDE8);
+    border: 3px solid #C5DDE8;
+    border-radius: 5px;
+}
+.p-head{
+    text-align: center;
+}
+
+#result, button{
+    font-size: large;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+
+}
+.question {
+    display: flex;
+    flex-flow: column nowrap;
+    border: 1px solid gray;
+    /* padding: 3px 8px;
+    margin: 2px 10px; */
+    border-radius: 5px;
+}
+
+.answers {
+    display: flex;
+    flex-flow: row nowrap;
+    align-content: center;
+    align-items: center;
+    padding: 3px 8px;
+    margin: 2px 10px;
+}
+

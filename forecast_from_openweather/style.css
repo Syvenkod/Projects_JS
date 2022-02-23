@@ -1,0 +1,50 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 600px;
+    margin: auto;
+
+}
+table {
+background: linear-gradient(45deg, #EECFBA, #C5DDE8);
+width: 100%;
+border: 5px solid #C5DDE8;
+font-weight: bold;
+text-align: center;
+}
+
+#forecast {
+   width: 100%;
+   font-size: small;
+   display: flex;
+   flex-flow: column wrap;
+   align-content: center;
+}
+
+.tr-head{
+    font-size: large;
+    margin-bottom: 20px;
+}
+
+#head-container{
+width: 100%;
+box-sizing: border-box;
+border: 5px solid #C5DDE8;
+background: linear-gradient(45deg, #EECFBA, #C5DDE8);
+display: flex;
+flex-flow: row nowrap;
+justify-content: space-between;
+}
+
+#header{
+    width: 100%;
+    font-weight: bold;
+    box-sizing: border-box;
+    border: 5px solid #C5DDE8;
+    background: linear-gradient(45deg, #EECFBA, #C5DDE8);
+    display: flex;
+    justify-content: center;
+}
+
+#btn-tempC, #btn-tempF, #btn-tempF-forecast {
+    width: 40px;}
+
