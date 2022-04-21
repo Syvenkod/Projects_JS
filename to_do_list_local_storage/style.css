@@ -36,9 +36,9 @@ body {
     color: white;
 }
 
-.completed p {
+/* .completed p {
     text-decoration: line-through;
-}
+} */
 
 .input-panel {
     width: 500px;

@@ -34,7 +34,6 @@ let dataService = {
         this.tasks.splice(index, 1);
         this.save();
     }
-
 }
 
 class TasksListView {
