@@ -1,6 +1,7 @@
 function check (){
 let counter = 0;
-let answersArray = Array.from(document.querySelectorAll("input[name]"));
+let answersArray = document.querySelectorAll("input[name]");
+console.log(answersArray);
     for (let i=0; i<answersArray.length; i++) {
     if (answersArray[i].checked) {
       counter +=Number(answersArray[i].value);
@@ -12,6 +13,3 @@ let confirmed = confirm(`Вы выполнили на ${result}% из 100%
 if(confirmed){location.reload(true)}
 else {alert("Спасибо за выполнение теста")}
 }
-
-
-
