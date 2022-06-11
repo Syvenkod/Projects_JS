@@ -1,7 +1,6 @@
 function check (){
 let counter = 0;
-let answersArray = document.querySelectorAll("input[name]");
-console.log(answersArray);
+let answersArray = document.querySelectorAll(".answer-input");
     for (let i=0; i<answersArray.length; i++) {
     if (answersArray[i].checked) {
       counter +=Number(answersArray[i].value);

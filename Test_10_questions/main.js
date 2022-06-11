@@ -32,6 +32,7 @@ class Question{
     input.type = "radio";
     input.name = `answer-${this.id}`;
     input.value = this.answers[i].value;
+    input.classList.add("answer-input");
     let p = document.createElement("p");
     p.innerText = this.answers[i].text;
     divAnswers.append(input);
