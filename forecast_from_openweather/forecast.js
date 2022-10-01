@@ -14,7 +14,7 @@ function createTableForecast(json){
     let hoursArray = [];
     json.list.forEach(json => {
         dateArray.push(json)});
-    for (let h=0; h < dateArray.length; h++){
+    for (let h = dateArray.length; h--;){
     let hour = new Date(Number(dateArray[h].dt+"000")).getUTCHours();
     if (hour == 15){
     hoursArray.push(dateArray[h])};
@@ -22,10 +22,10 @@ function createTableForecast(json){
 
     tableForecast.appendChild(createRowCity(json.city.name))
     let tr = document.createElement("tr");
-    for (let i=0; i < hoursArray.length; i++){
+    for (let i = hoursArray.length; i--;){
         const icon = hoursArray[i].weather[0]['icon'];
         img = document.createElement("img");
-        let image = `<img src="http://openweathermap.org/img/wn/${icon}@2x.png">`;
+        let image = `<img src="https://openweathermap.org/img/wn/${icon}@2x.png">`;
         let date = new Date(Number(hoursArray[i].dt+"000"));
         let dayDate = days[date.getDay()];
         let temp = Math.round(hoursArray[i].main.temp) + " &#176";
@@ -65,7 +65,7 @@ function changeDegreeForecast(){
 function showJsonForecast(){
     let cityArray = [];
     cities.forEach(cityId => {
-    cityArray.push(new ForecastCityWeather(`http://api.openweathermap.org/data/2.5/forecast?id=${cityId}&appid=bf35cac91880cb98375230fb443a116f${degree}`))
+    cityArray.push(new ForecastCityWeather(`https://api.openweathermap.org/data/2.5/forecast?id=${cityId}&appid=bf35cac91880cb98375230fb443a116f${degree}`))
     })
     cityArray.forEach(city => city.forecastInfo);
     };
